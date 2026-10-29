@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de la compra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="contenedor">
+    <header>
+      <h1>🛒 Lista de la compra</h1>
+      <p id="resumen" class="resumen"></p>
+    </header>
+
+    <form id="formulario" class="formulario">
+      <input type="text" id="nombre" placeholder="Ej: leche" maxlength="40" required aria-label="Producto">
+      <input type="number" id="cantidad" value="1" min="1" max="99" aria-label="Cantidad">
+      <button type="submit">Añadir</button>
+    </form>
+
+    <div class="filtros" role="group" aria-label="Filtrar productos">
+      <button class="filtro activo" data-filtro="todos">Todos</button>
+      <button class="filtro" data-filtro="pendientes">Pendientes</button>
+      <button class="filtro" data-filtro="comprados">Comprados</button>
+    </div>
+
+    <ul id="lista" class="lista"></ul>
+    <p id="vacio" class="vacio">No hay productos en la lista.</p>
+
+    <button id="limpiar" class="limpiar">Quitar los comprados</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

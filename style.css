@@ -1,0 +1,167 @@
+:root {
+  --fondo: #f3f6f2;
+  --tarjeta: #ffffff;
+  --verde: #2f8f5b;
+  --verde-claro: #e3f2e9;
+  --texto: #1f2a24;
+  --texto-suave: #6b7a71;
+  --borde: #dde5df;
+  --rojo: #c94a4a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--fondo);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--texto);
+  padding: 32px 16px;
+}
+
+.contenedor {
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--tarjeta);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(31, 42, 36, 0.08);
+}
+
+h1 { font-size: 1.6rem; }
+
+.resumen {
+  color: var(--texto-suave);
+  margin-top: 4px;
+  font-size: 0.95rem;
+}
+
+/* ---------- Formulario ---------- */
+.formulario {
+  display: flex;
+  gap: 8px;
+  margin: 20px 0 16px;
+}
+
+.formulario input {
+  padding: 10px 12px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-size: 1rem;
+  min-width: 0;
+}
+
+.formulario input[type="text"] { flex: 1; }
+.formulario input[type="number"] { width: 64px; }
+
+.formulario input:focus {
+  outline: 2px solid var(--verde);
+  border-color: transparent;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.formulario button {
+  background: var(--verde);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0 16px;
+  font-weight: 600;
+}
+
+/* ---------- Filtros ---------- */
+.filtros {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.filtro {
+  border: 1px solid var(--borde);
+  background: none;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+.filtro.activo {
+  background: var(--verde-claro);
+  border-color: var(--verde);
+  color: var(--verde);
+}
+
+/* ---------- Lista ---------- */
+.lista { list-style: none; }
+
+.producto {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--borde);
+}
+
+.producto input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--verde);
+  cursor: pointer;
+}
+
+.producto .nombre { flex: 1; }
+
+.producto .cantidad {
+  background: var(--verde-claro);
+  color: var(--verde);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 2px 8px;
+}
+
+.producto.comprado .nombre {
+  text-decoration: line-through;
+  color: var(--texto-suave);
+}
+
+.eliminar {
+  background: none;
+  border: none;
+  color: var(--texto-suave);
+  font-size: 1.2rem;
+  padding: 0 4px;
+}
+
+.eliminar:hover { color: var(--rojo); }
+
+.vacio {
+  text-align: center;
+  color: var(--texto-suave);
+  padding: 24px 0;
+}
+
+.limpiar {
+  margin-top: 16px;
+  width: 100%;
+  background: none;
+  border: 1px dashed var(--borde);
+  border-radius: 8px;
+  padding: 10px;
+  color: var(--texto-suave);
+}
+
+.limpiar:hover {
+  color: var(--rojo);
+  border-color: var(--rojo);
+}
+
+.oculto { display: none; }
